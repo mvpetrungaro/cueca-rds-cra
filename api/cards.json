@@ -1,28 +1,26 @@
 {
   "cards": [
-    [
-      {
-        "code": "ECF004",
-        "name": "Jade Emperor",
-        "type": "Limited Legendary",
-        "power": "1",
-        "energy": "1",
-        "abilityTitle": "The First Emperor",
-        "ability": "When returned to your deck, if you won the turn, give all your <b>Common</b>, <b>Rare</b> and <b>Epic</b> cards (even if in your deck) +15 Power until played. ",
-        "abilityPlaintext": "When returned to your deck, if you won the turn, give all your Common, Rare and Epic cards (even if in your deck) +15 Power until played. ",
-        "abilityPlaintextV2": ":return:If you won the turn, your Common, Rare and Epic cards, wherever they are, gain +15:power: until played.",
-        "collectionCode": "ECF",
-        "collection": "Chinese Folklore",
-        "albumCode": "EXP",
-        "album": "History",
-        "cardImg": "e242cf007f92a8f04e620aa33c8dc8e554471db8",
-        "img": "e242cf007f92a8f04e620aa33c8dc8e554471db8",
-        "collectionImage": "2e19ce35d873f5ac10fa2c9df5624a6168fcd3ff",
-        "dyk": "Also known as the Heavenly Grandfather, the <b>Jade Emperor</b> did more than watch daytime telly and recite stories of his youth. In Chinese culture, this regal being is a representation of the first God. \n\nIn one Chinese creation myth, the Jade Emperor fashioned the first humans from clay and left them to harden in the sun. Rain deformed some of the figures, which gave rise to human sickness. At this point, it was too late to invent umbrellas.",
-        "firstPull": 1613116932175,
-        "modifiedDate": 1642995525656,
-        "tradeIndex": 316.12
-      }
-    ]
+    {
+      "code": "ECF004",
+      "name": "Jade Emperor",
+      "type": "Limited Legendary",
+      "power": "1",
+      "energy": "1",
+      "abilityTitle": "The First Emperor",
+      "ability": "When returned to your deck, if you won the turn, give all your <b>Common</b>, <b>Rare</b> and <b>Epic</b> cards (even if in your deck) +15 Power until played. ",
+      "abilityPlaintext": "When returned to your deck, if you won the turn, give all your Common, Rare and Epic cards (even if in your deck) +15 Power until played. ",
+      "abilityPlaintextV2": ":return:If you won the turn, your Common, Rare and Epic cards, wherever they are, gain +15:power: until played.",
+      "collectionCode": "ECF",
+      "collection": "Chinese Folklore",
+      "albumCode": "EXP",
+      "album": "History",
+      "cardImg": "e242cf007f92a8f04e620aa33c8dc8e554471db8",
+      "img": "e242cf007f92a8f04e620aa33c8dc8e554471db8",
+      "collectionImage": "2e19ce35d873f5ac10fa2c9df5624a6168fcd3ff",
+      "dyk": "Also known as the Heavenly Grandfather, the <b>Jade Emperor</b> did more than watch daytime telly and recite stories of his youth. In Chinese culture, this regal being is a representation of the first God. \n\nIn one Chinese creation myth, the Jade Emperor fashioned the first humans from clay and left them to harden in the sun. Rain deformed some of the figures, which gave rise to human sickness. At this point, it was too late to invent umbrellas.",
+      "firstPull": 1613116932175,
+      "modifiedDate": 1642995525656,
+      "tradeIndex": 316.12
+    }
   ]
 }
