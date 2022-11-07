@@ -1,30 +1,50 @@
-import { useState, useEffect } from 'react'
-import { Card } from '../models/Card'
-import { getCards } from '../services/cards.service'
-import { findCardByCode } from '../services/cuecards.service'
+import { useState, useEffect } from "react";
+import CardComponent from "../components/CardComponent";
+import { Card } from "../models/Card";
+import { getCards } from "../services/cards.service";
+import { findCardByCode } from "../services/cuecards.service";
 
 export default function Home() {
-  const [searchValue, setSearchValue] = useState('')
-  const [cardFound, setCardFound] = useState<Card | null>(null)
-  const [cardsFound, setCardsFound] = useState<Card[]>([])
+  const [searchValue, setSearchValue] = useState("");
+  const [cardFound, setCardFound] = useState<Card | null>(null);
+  const [cardsFound, setCardsFound] = useState<Card[]>([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       if (!searchValue) {
-        const cards = await getCards()
-        setCardsFound(cards)
+        const cards = await getCards();
+        setCardsFound(cards);
       }
-    })()
-  }, [searchValue])
+    })();
+  }, [searchValue]);
 
   function handleSearchValueChange(e: any) {
-    setSearchValue(e.target.value)
+    setSearchValue(e.target.value);
   }
 
   async function searchCard() {
-    const card = await findCardByCode(searchValue)
+    const trimmedSearchValue = searchValue?.trim();
+    setSearchValue(trimmedSearchValue);
 
-    setCardFound(card)
+    if (!trimmedSearchValue) {
+      setCardFound(null);
+      setError("");
+
+      return;
+    }
+
+    try {
+      const card = await findCardByCode(trimmedSearchValue);
+
+      setCardFound(card);
+      setError("");
+
+      console.log(card);
+    } catch (err: any) {
+      setCardFound(null);
+      setError(err.message);
+    }
   }
 
   return (
@@ -46,18 +66,15 @@ export default function Home() {
             Go
           </button>
         </div>
+        {error && (
+          <div className="m-2">
+            <h3>{error}</h3>
+          </div>
+        )}
         {cardFound && (
           <div className="m-2">
             <h3>{cardFound.name}</h3>
-            <img
-              src={`https://cdn-virttrade-assets-eucalyptus.cloud.virttrade.com/filekey/${cardFound.img.substring(
-                0,
-                2
-              )}/${cardFound.img.substring(2, 4)}/${cardFound.img.substring(
-                4
-              )}_q`}
-              alt={cardFound.name}
-            />
+            <CardComponent card={cardFound} />
           </div>
         )}
       </div>
@@ -65,11 +82,11 @@ export default function Home() {
         <div>
           <ul>
             {cardsFound.map((card) => {
-              return <li key={card.code}>{card.ability}</li>
+              return <li key={card.code}>{card.ability}</li>;
             })}
           </ul>
         </div>
       )}
     </div>
-  )
+  );
 }
