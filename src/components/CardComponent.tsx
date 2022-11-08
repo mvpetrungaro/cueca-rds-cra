@@ -115,6 +115,33 @@ export default function CardComponent({ card }: CardComponentProps) {
               borderTopRightRadius: 18,
             }}
           >
+            {!!limited && (
+              <svg
+                style={{
+                  position: "absolute",
+                  margin: "auto",
+                  left: 0,
+                  right: 0,
+                  top: -110,
+                  width: 110,
+                  height: 110,
+                }}
+              >
+                <path
+                  id="curve"
+                  d="M 0 110 A 1 1 0 0 1 110 110"
+                  style={{ fill: "blue" }}
+                />
+                <text
+                  x="85"
+                  textAnchor="middle"
+                  dominantBaseline="hanging"
+                  style={{ fill: "white" }}
+                >
+                  <textPath xlinkHref="#curve">Limited</textPath>
+                </text>
+              </svg>
+            )}
             <img
               src={`https://cdn-virttrade-assets-eucalyptus.cloud.virttrade.com/filekey/${card.collectionImage.substring(
                 0,
@@ -124,13 +151,14 @@ export default function CardComponent({ card }: CardComponentProps) {
                 4
               )}/${card.collectionImage.substring(4)}`} //_q
               alt={card.name}
-              width={60}
               style={{
                 position: "absolute",
                 margin: "auto",
                 left: 0,
                 right: 0,
                 top: -30,
+                width: 60,
+                height: 60,
               }}
             />
             <div
