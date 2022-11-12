@@ -76,7 +76,14 @@ export default function CardComponent({ card }: CardComponentProps) {
         >
           <div
             className="flex-1 text-center self-center font-semibold uppercase"
-            style={{ fontSize: "0.8vw", color: typeColor }}
+            style={{
+              fontSize: "80%",
+              color: typeBackgroundColor,
+              textShadow:
+                "white -1px 0px, white 0px 1px, white 1px 0px, white 0px -1px",
+              fontWeight: 900,
+              fontStyle: "italic",
+            }}
           >
             {cardType}
           </div>
@@ -122,15 +129,15 @@ export default function CardComponent({ card }: CardComponentProps) {
                   margin: "auto",
                   left: 0,
                   right: 0,
-                  top: -110,
-                  width: 110,
-                  height: 110,
+                  top: -100,
+                  width: 100,
+                  height: 100,
                 }}
               >
                 <path
                   id="curve"
-                  d="M 0 110 A 1 1 0 0 1 110 110"
-                  style={{ fill: "blue" }}
+                  d="M 0 100 A 1 1 0 0 1 100 100"
+                  style={{ fill: albumAbilityColor }}
                 />
                 <text
                   x="85"
