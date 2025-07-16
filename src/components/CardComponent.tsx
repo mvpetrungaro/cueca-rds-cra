@@ -202,7 +202,12 @@ export default function CardComponent({ card }: CardComponentProps) {
               <div className="text-md font-semibold text-center">
                 {card.abilityTitle}
               </div>
-              <div className="text-xs text-center">{card.ability}</div>
+              <div
+                className="text-xs text-center"
+                dangerouslySetInnerHTML={{
+                  __html: card.ability,
+                }}
+              ></div>
             </div>
           </div>
         </div>

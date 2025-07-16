@@ -103,3 +103,27 @@ export function getTypeLayout(type: string): TypeLayout | undefined {
 export async function getCards(): Promise<Card[]> {
   return await (await fetch("http://localhost:3001/cards")).json();
 }
+
+export async function postCard(card: Card) {
+  const cardToPersist = {id: card.code.toLowerCase(), ...card}
+
+  console.log(cardToPersist)
+
+  let res = await fetch("http://localhost:3001/cards", {
+    body: JSON.stringify(cardToPersist),
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+
+  if (!res.ok) {
+    throw Error('Failed to add card')
+  }
+
+  const json = await res.json()
+
+  console.log(json)
+}
+
+export const types = layout.types
